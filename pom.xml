@@ -7,8 +7,8 @@
 		<artifactId>ElAbueloNicolasCentral</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>ElAbueloNicolasServicios</groupId>
-	<artifactId>ElAbueloNicolasServicios</artifactId>
+	<groupId>Servicios-Equipo-5</groupId>
+	<artifactId>Servicios-Equipo-5</artifactId>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,8 +21,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>ElAbueloNicolasPersistencia</groupId>
-			<artifactId>ElAbueloNicolasPersistencia</artifactId>
+			<groupId>Persistencia-Equipo-5</groupId>
+			<artifactId>Persistencia-Equipo-5</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

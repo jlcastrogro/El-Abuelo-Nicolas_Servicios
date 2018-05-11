@@ -3,5 +3,6 @@
 <configuration>
 	<mappers>
 		<mapper resource="elabuelonicolas/bd/mappers/ClienteMapper.xml" />
+		<mapper resource="elabuelonicolas/bd/mappers/ProductoMapper.xml" />
 	</mappers>
 </configuration>

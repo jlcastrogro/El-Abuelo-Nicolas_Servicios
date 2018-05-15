@@ -1,4 +1,4 @@
-package elabuelonicolas.service.cliente.test;
+package elabuelonicolas.service.cliente;
 
 import static org.junit.Assert.assertEquals;
 import javax.inject.Inject;

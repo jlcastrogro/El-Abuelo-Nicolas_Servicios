@@ -53,7 +53,7 @@ public class ListacomprasServiceImplTest {
 		Listacompras lc = lcService.read(1);
 		try {
 			System.out.print("\nUpdate");
-			lc.setId(1);
+			lc.setId(1); 
 			lc.setIdproducto(0);
 			lc.setCantidad(0);
 			lc.setSubtotal(0.10);

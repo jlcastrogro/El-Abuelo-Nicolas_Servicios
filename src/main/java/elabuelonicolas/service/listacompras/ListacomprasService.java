@@ -2,7 +2,7 @@ package elabuelonicolas.service.listacompras;
 
 import java.util.List;
 import elabuelonicolas.bd.domain.Listacompras;
-
+ 
 public interface ListacomprasService {
 	List<Listacompras> findAll();
 

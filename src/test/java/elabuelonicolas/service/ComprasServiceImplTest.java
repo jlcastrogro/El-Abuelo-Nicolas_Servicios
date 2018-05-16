@@ -51,7 +51,7 @@ public class ComprasServiceImplTest {
 
 	@Test
 	public void readCompras() {
-		try {
+		try { 
 			Compras c = compraService.read(9);
 			System.out.println(c.getId());
 			System.out.println(c.getIdproveedor());

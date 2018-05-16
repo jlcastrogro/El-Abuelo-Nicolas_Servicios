@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import elabuelonicolas.bd.domain.Compras;
 import elabuelonicolas.dao.compras.ComprasDao;
-
+ 
 @Named
 public class ComprasServiceImpl implements ComprasService{	
 

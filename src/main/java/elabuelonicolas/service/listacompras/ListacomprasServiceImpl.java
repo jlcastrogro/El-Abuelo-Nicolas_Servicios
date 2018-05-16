@@ -1,4 +1,4 @@
-package elabuelonicolas.service.listacompras;
+package elabuelonicolas.service.listacompras; 
 
 import java.util.List;
 import javax.inject.Inject;

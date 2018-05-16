@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<mappers>
 		<mapper resource="elabuelonicolas/bd/mappers/ClienteMapper.xml" />
 		<mapper resource="elabuelonicolas/bd/mappers/ProductoMapper.xml" />
+		<mapper resource="elabuelonicolas/bd/mappers/VentasMapper.xml" />
+		<mapper resource="elabuelonicolas/bd/mappers/ListaventasMapper.xml" />
 	</mappers>
 </configuration>

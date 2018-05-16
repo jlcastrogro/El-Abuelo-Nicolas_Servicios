@@ -8,7 +8,7 @@ public interface ClienteService {
 
 	void create(Cliente cliente);
 
-	Cliente read(int id);
+	Cliente readById(int id);
 
 	void update(Cliente cliente);
 

@@ -20,8 +20,8 @@ public class ClienteServiceImpl implements ClienteService {
 		clienteDao.create(cliente);
 	}
 
-	public Cliente read(int id) {
-		return clienteDao.read(id);
+	public Cliente readById(int id) {
+		return clienteDao.readById(id);
 	}
 
 	public void update(Cliente cliente) {

@@ -51,7 +51,7 @@ public class ClienteServiceImplTest {
 	@Test
 	public void readCliente() {
 		try {
-			Cliente c = clienteService.read(9);
+			Cliente c = clienteService.readById(9);
 			System.out.println(c.getId());
 			System.out.println(c.getNombre());
 			System.out.println("Read");
@@ -63,7 +63,7 @@ public class ClienteServiceImplTest {
 
 	@Test
 	public void updateCliente() {
-		Cliente c = clienteService.read(10);
+		Cliente c = clienteService.readById(10);
 		try {
 			c.setNombre("Luis");
 			c.setContacto("Castro");

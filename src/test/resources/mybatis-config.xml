@@ -6,5 +6,7 @@
 		<mapper resource="elabuelonicolas/bd/mappers/ProductoMapper.xml" />
 		<mapper resource="elabuelonicolas/bd/mappers/VentasMapper.xml" />
 		<mapper resource="elabuelonicolas/bd/mappers/ListaventasMapper.xml" />
-	</mappers>
+		<mapper resource="elabuelonicolas/bd/mappers/ComprasMapper.xml" />
+		<mapper resource="elabuelonicolas/bd/mappers/ListacomprasMapper.xml" />
+	</mappers> 
 </configuration>

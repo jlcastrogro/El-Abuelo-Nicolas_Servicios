@@ -31,8 +31,8 @@ public class ClienteServiceImpl implements ClienteService {
 		return clienteDao.readByNombre(nombre);
 	}
 
-	public List<Cliente> readByDireccion(String direccion) {
-		return clienteDao.readByDireccion(direccion);
+	public Cliente readByDireccion(int idDireccion) {
+		return clienteDao.readByDireccion(idDireccion);
 	}
 
 	public List<Cliente> readByContacto(String contacto) {
@@ -57,10 +57,6 @@ public class ClienteServiceImpl implements ClienteService {
 	
 	public void updateNombre(@Param("id") int id, @Param("nombre") String nombre) {
 		clienteDao.updateNombre(id, nombre);
-	}
-
-	public void updateDireccion(@Param("id") int id, @Param("direccion") String direccion) {
-		clienteDao.updateDireccion(id, direccion);
 	}
 
 	public void updateContacto(@Param("id") int id, @Param("contacto") String contacto) {

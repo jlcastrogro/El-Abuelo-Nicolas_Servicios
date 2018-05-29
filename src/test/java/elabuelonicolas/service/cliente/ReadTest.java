@@ -24,7 +24,7 @@ public class ReadTest {
 	public void setUp() {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("Paco");
-		this.cliente.setDireccion("Acatlima");
+		this.cliente.setIddireccion(1);
 		this.cliente.setContacto("Josué");
 		this.cliente.setTelefono("951507892");
 		this.cliente.setEmail("jlgro@gmail.com");
@@ -63,8 +63,8 @@ public class ReadTest {
 	@Test
 	public void readByDireccion() {
 		try {
-			List<Cliente> clientes = clienteService.readByDireccion(this.cliente.getDireccion());
-			assertEquals(clientes.get(0).getDireccion(), this.cliente.getDireccion());
+			Cliente cliente = clienteService.readByDireccion(this.cliente.getIddireccion());
+			assertEquals(cliente.getIddireccion(), this.cliente.getIddireccion());
 		} catch (Exception e) {
 			System.out.println("Error readByDireccionTest: " + e);
 		}

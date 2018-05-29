@@ -12,10 +12,10 @@ public interface ClienteService {
 	void create(Cliente cliente);
 
 	Cliente read(int id);
-	
+
 	List<Cliente> readByNombre(String nombre);
 
-	List<Cliente> readByDireccion(String direccion);
+	Cliente readByDireccion(int idDireccion);
 
 	List<Cliente> readByContacto(String nombre);
 
@@ -26,10 +26,8 @@ public interface ClienteService {
 	List<Cliente> readByRfc(String rfc);
 
 	void update(Cliente cliente);
-	
-	void updateNombre(@Param("id") int id, @Param("nombre") String nombre);
 
-	void updateDireccion(@Param("id") int id, @Param("direccion") String direccion);
+	void updateNombre(@Param("id") int id, @Param("nombre") String nombre);
 
 	void updateContacto(@Param("id") int id, @Param("contacto") String contacto);
 

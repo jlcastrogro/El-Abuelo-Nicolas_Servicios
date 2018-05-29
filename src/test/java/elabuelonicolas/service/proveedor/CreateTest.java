@@ -24,7 +24,7 @@ public class CreateTest {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("Elektra");
 		this.proveedor.setContacto("Jose");
-		this.proveedor.setDireccion("Huajuapan");
+		this.proveedor.setIddireccion(2);
 		this.proveedor.setEmail("elektrahj@gmail.com");
 		this.proveedor.setRfc("EKHJ984317HPLCRM09");
 		this.proveedor.setTelefono("9551239856");

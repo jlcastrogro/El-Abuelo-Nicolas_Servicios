@@ -31,8 +31,8 @@ public class ProveedorServiceImpl implements ProveedorService {
 		return proveedorDao.readByNombre(nombre);
 	}
 
-	public List<Proveedor> readByDireccion(String direccion) {
-		return proveedorDao.readByDireccion(direccion);
+	public Proveedor readByDireccion(int idDireccion) {
+		return proveedorDao.readByDireccion(idDireccion);
 	}
 
 	public List<Proveedor> readByContacto(String contacto) {
@@ -57,10 +57,6 @@ public class ProveedorServiceImpl implements ProveedorService {
 	
 	public void updateNombre(@Param("id") int id, @Param("nombre") String nombre) {
 		proveedorDao.updateNombre(id, nombre);
-	}
-
-	public void updateDireccion(@Param("id") int id, @Param("direccion") String direccion) {
-		proveedorDao.updateDireccion(id, direccion);
 	}
 
 	public void updateContacto(@Param("id") int id, @Param("contacto") String contacto) {

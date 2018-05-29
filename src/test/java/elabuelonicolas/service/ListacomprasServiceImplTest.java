@@ -6,21 +6,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import elabuelonicolas.bd.domain.Listacompras;
-import elabuelonicolas.service.listacompras.ListacomprasService;
+import elabuelonicolas.bd.domain.Listacompra;
+import elabuelonicolas.service.listacompra.ListacompraService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 
 public class ListacomprasServiceImplTest {
 	@Inject
-	ListacomprasService lcService;
+	ListacompraService lcService;
  
 	@Test
 	public void createListacompra() {
 		try {
 			System.out.print("\nCreate");
-			Listacompras lc = new Listacompras();
+			Listacompra lc = new Listacompra();
 			lc.setId(1);
 			lc.setIdproducto(172);
 			lc.setCantidad(20370);
@@ -36,7 +36,7 @@ public class ListacomprasServiceImplTest {
 	@Test
 	public void readListacompra() {
 		try {
-			Listacompras lc = lcService.read(1);
+			Listacompra lc = lcService.read(1);
 			System.out.println("\nRead");
 			System.out.println("Id: " + lc.getId());
 			System.out.println("Id Prodcuto: " + lc.getIdproducto());
@@ -50,7 +50,7 @@ public class ListacomprasServiceImplTest {
 
 	@Test
 	public void updateListacompra() {
-		Listacompras lc = lcService.read(1);
+		Listacompra lc = lcService.read(1);
 		try {
 			System.out.print("\nUpdate");
 			lc.setId(1); 
@@ -79,8 +79,8 @@ public class ListacomprasServiceImplTest {
 	@Test
 	public void findAllClientes() {
 		try {
-			List<Listacompras> list = lcService.findAll();
-			for (Listacompras lc : list) {
+			List<Listacompra> list = lcService.findAll();
+			for (Listacompra lc : list) {
 				System.out.println("\nFind All");
 				System.out.println("Id Compra: " + lc.getId());
 				System.out.println("Id Producto: " + lc.getIdproducto());

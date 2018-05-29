@@ -9,75 +9,75 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import elabuelonicolas.bd.domain.Listaventas;
-import elabuelonicolas.service.listaventas.ListaventasService;
+import elabuelonicolas.bd.domain.Listaventa;
+import elabuelonicolas.service.listaventa.ListaventaService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"/applicationContext.xml"})
-public class ListaventasServiceImplTest {
+public class ListaventaServiceImplTest {
 
 	@Inject
-	ListaventasService listaventasService;
+	ListaventaService listaventaService;
 	
 	@Test
 	public void findAll() {
 		try {
-			List<Listaventas> list = listaventasService.findAll();
+			List<Listaventa> list = listaventaService.findAll();
 			System.out.println("Find All Lista Venta Service");
-			for (Listaventas lv: list) {
+			for (Listaventa lv: list) {
 				System.out.println("Id Producto: " + lv.getIdproducto());
 				System.out.println("Cantidad : " + lv.getCantidad());
 				System.out.println("Subtotal: " + lv.getSubtotal());
 				System.out.println("Id Venta: " + lv.getIdventa());
 			}
 		}catch (Exception e) {
-			System.out.println("Error findAll (ListaventasServiceImplTest.java): " + e);
+			System.out.println("Error findAll (ListaventaServiceImplTest.java): " + e);
 		}
 	}
 	
 	@Test 
-	public void createListaventas() {
-		Listaventas lv = new Listaventas();
+	public void createListaventa() {
+		Listaventa lv = new Listaventa();
 		try {
 			lv.setIdproducto(1);
 			lv.setCantidad(250);
 			lv.setSubtotal(345.53);
 			lv.setIdventa(2);
 		}catch (Exception e) {
-			System.out.println("Error create (ListaventasServiceImplTest.java): " + e);
+			System.out.println("Error create (ListaventaServiceImplTest.java): " + e);
 		}
 	}
 	
 	@Test
-	public void readListaventas() {
+	public void readListaventa() {
 		try {
-			Listaventas lv = listaventasService.read(1);
+			Listaventa lv = listaventaService.read(1);
 			System.out.println("Id Producto: " + lv.getIdproducto());
 			System.out.println("Cantidad : " + lv.getCantidad());
 			System.out.println("Subtotal: " + lv.getSubtotal());
 			System.out.println("Id Venta: " + lv.getIdventa());
 		}catch (Exception e) {
-			System.out.println("Error Read (ListaventasServiceImplTest.java): " + e);
+			System.out.println("Error Read (ListaventaServiceImplTest.java): " + e);
 		}
 	}
 	
 	@Test
-	public void updateListaventas() {
-		Listaventas lv = listaventasService.read(2);
+	public void updateListaventa() {
+		Listaventa lv = listaventaService.read(2);
 		try {
 			lv.setIdproducto(90);
 			lv.setCantidad(900);
 			lv.setSubtotal(900.99);
 			lv.setIdventa(90);
 		}catch(Exception e) {
-			System.out.println("Error Update (ListaventasServiceImplTes.java): " + e);
+			System.out.println("Error Update (ListaventaServiceImplTes.java): " + e);
 		}
 	}
 	
 	@Test
 	public void delete() {
 		try {
-			listaventasService.delete(6);
+			listaventaService.delete(6);
 			System.out.println("Delete Lista Ventas");
 		}catch (Exception e) {
 			System.out.println("Error Delete (ListavetnasServiceImplTest): " + e);

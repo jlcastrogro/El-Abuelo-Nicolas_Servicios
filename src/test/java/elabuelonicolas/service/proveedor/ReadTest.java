@@ -24,7 +24,7 @@ public class ReadTest {
 	public void setUp() {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("Similares");
-		this.proveedor.setDireccion("Huajuapan");
+		this.proveedor.setIddireccion(2);
 		this.proveedor.setContacto("Juan");
 		this.proveedor.setTelefono("9551228766");
 		this.proveedor.setEmail("simihj@gmail.com");
@@ -63,8 +63,8 @@ public class ReadTest {
 	@Test
 	public void readByDireccion() {
 		try {
-			List<Proveedor> proveedor = proveedorService.readByDireccion(this.proveedor.getDireccion());
-			assertEquals(proveedor.get(0).getDireccion(), this.proveedor.getDireccion());
+			Proveedor proveedor = proveedorService.readByDireccion(this.proveedor.getIddireccion());
+			assertEquals(proveedor.getIddireccion(), this.proveedor.getIddireccion());
 		} catch (Exception e) {
 			System.out.println("Error readByDireccionTest: " + e);
 		}

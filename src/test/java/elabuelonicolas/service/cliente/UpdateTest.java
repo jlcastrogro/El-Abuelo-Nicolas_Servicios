@@ -22,7 +22,7 @@ public class UpdateTest {
 	public void setUp() {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("Pedro");
-		this.cliente.setDireccion("Oaxaca");
+		this.cliente.setIddireccion(2);
 		this.cliente.setContacto("José");
 		this.cliente.setTelefono("9515787892");
 		this.cliente.setEmail("pedro@gmail.com");
@@ -44,7 +44,7 @@ public class UpdateTest {
 		try {
 			System.out.println("Update");
 			c.setNombre("Luis");
-			c.setDireccion("Putla");
+			c.setIddireccion(3);
 			c.setContacto("Guerrero");
 			c.setTelefono("9535362398");
 			c.setEmail("jlcastrogro@outlook.com");
@@ -55,7 +55,7 @@ public class UpdateTest {
 		}
 
 		assertNotEquals(this.cliente.getNombre(), c.getNombre());
-		assertNotEquals(this.cliente.getDireccion(), c.getDireccion());
+		assertNotEquals(this.cliente.getIddireccion(), c.getIddireccion());
 		assertNotEquals(this.cliente.getContacto(), c.getContacto());
 		assertNotEquals(this.cliente.getTelefono(), c.getTelefono());
 		assertNotEquals(this.cliente.getEmail(), c.getEmail());
@@ -71,18 +71,6 @@ public class UpdateTest {
 			assertNotEquals(c.getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
 			System.out.println("Error updateNombreTest: " + e);
-		}
-	}
-
-	@Test
-	public void updateDireccion() {
-		try {
-			System.out.println("UpdateAddress");
-			clienteService.updateDireccion(this.cliente.getId(), "Huajuapan");
-			Cliente c = clienteService.read(this.cliente.getId());
-			assertNotEquals(c.getDireccion(), this.cliente.getDireccion());
-		} catch (Exception e) {
-			System.out.println("Error updateDireccionTest: " + e);
 		}
 	}
 

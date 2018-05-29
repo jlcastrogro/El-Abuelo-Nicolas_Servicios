@@ -36,7 +36,7 @@ public class ClienteServiceImplTest {
 		try {
 			c.setNombre("Luis");
 			c.setContacto("Castro");
-			c.setDireccion("Acatlima");
+			c.setIddireccion(1);
 			c.setEmail("jlcastrogro@gmail.com");
 			c.setRfc("CACG950419HOCSRS00");
 			c.setTelefono("9515007892");
@@ -67,7 +67,7 @@ public class ClienteServiceImplTest {
 		try {
 			c.setNombre("Luis");
 			c.setContacto("Castro");
-			c.setDireccion("Acatlima");
+			c.setIddireccion(2);
 			c.setEmail("jlcastrogro@gmail.com");
 			c.setRfc("CACG950419HOCSRS00");
 			c.setTelefono("9515007892");

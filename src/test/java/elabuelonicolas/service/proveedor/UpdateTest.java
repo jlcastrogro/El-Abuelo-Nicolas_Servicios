@@ -22,7 +22,7 @@ public class UpdateTest {
 	public void setUp() {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("MiniBodega");
-		this.proveedor.setDireccion("Acatlan");
+		this.proveedor.setIddireccion(2);
 		this.proveedor.setContacto("Juan");
 		this.proveedor.setTelefono("9515787892");
 		this.proveedor.setEmail("juanmb@gmail.com");
@@ -44,7 +44,7 @@ public class UpdateTest {
 		try {
 			System.out.println("Update");
 			p.setNombre("Bodega");
-			p.setDireccion("Puebla");
+			p.setIddireccion(1);
 			p.setContacto("Jose");
 			p.setTelefono("987654321");
 			p.setEmail("joseortiz@outlook.com");
@@ -55,7 +55,7 @@ public class UpdateTest {
 		}
 
 		assertNotEquals(this.proveedor.getNombre(), p.getNombre());
-		assertNotEquals(this.proveedor.getDireccion(), p.getDireccion());
+		assertNotEquals(this.proveedor.getIddireccion(), p.getIddireccion());
 		assertNotEquals(this.proveedor.getContacto(), p.getContacto());
 		assertNotEquals(this.proveedor.getTelefono(), p.getTelefono());
 		assertNotEquals(this.proveedor.getEmail(), p.getEmail());
@@ -71,18 +71,6 @@ public class UpdateTest {
 			assertNotEquals(p.getNombre(), this.proveedor.getNombre());
 		} catch (Exception e) {
 			System.out.println("Error updateNombreTest: " + e);
-		}
-	}
-
-	@Test
-	public void updateDireccion() {
-		try {
-			System.out.println("UpdateAddress");
-			proveedorService.updateDireccion(this.proveedor.getId(), "Huajuapan");
-			Proveedor p = proveedorService.read(this.proveedor.getId());
-			assertNotEquals(p.getDireccion(), this.proveedor.getDireccion());
-		} catch (Exception e) {
-			System.out.println("Error updateDireccionTest: " + e);
 		}
 	}
 

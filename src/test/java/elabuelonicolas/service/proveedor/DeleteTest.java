@@ -25,7 +25,7 @@ public class DeleteTest {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("Coopel");
 		this.proveedor.setContacto("Nicolas");
-		this.proveedor.setDireccion("Huajuapan");
+		this.proveedor.setIddireccion(2);
 		this.proveedor.setEmail("coopelhj@gmail.com");
 		this.proveedor.setRfc("COPH455672HPLCRD55");
 		this.proveedor.setTelefono("9531294557");

@@ -7,22 +7,22 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import elabuelonicolas.bd.domain.Compras;
-import elabuelonicolas.service.compras.ComprasService;
+import elabuelonicolas.bd.domain.Compra;
+import elabuelonicolas.service.compra.CompraService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 
-public class ComprasServiceImplTest {
+public class CompraServiceImplTest {
 	@Inject 
-	ComprasService compraService;
+	CompraService compraService;
 
 	@Test
 	public void findAll() {
 		try {
-			List<Compras> lista = compraService.findAll();
+			List<Compra> lista = compraService.findAll();
 			System.out.println("FindAll");
-			for (Compras c : lista) {
+			for (Compra c : lista) {
 				System.out.println("Id: " + c.getId());
 				System.out.println("ID proveedor: " + c.getIdproveedor());
 			}
@@ -34,13 +34,13 @@ public class ComprasServiceImplTest {
 
 	@SuppressWarnings("deprecation")
 	@Test
-	public void createCompras() {
-		Compras c = new Compras();
+	public void createCompra() {
+		Compra c = new Compra();
 		try {
 			c.setIdproveedor(1);
 			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
-			c.setPreciototal(100.10);
+			c.setTotal(100.10);
 			compraService.create(c);
 			System.out.println("Create");
 			System.out.println();
@@ -50,9 +50,9 @@ public class ComprasServiceImplTest {
 	}
 
 	@Test
-	public void readCompras() {
+	public void readCompra() {
 		try { 
-			Compras c = compraService.read(4);
+			Compra c = compraService.read(4);
 			System.out.println(c.getId());
 			System.out.println(c.getIdproveedor());
 			System.out.println("Read");
@@ -64,13 +64,13 @@ public class ComprasServiceImplTest {
 
 	@SuppressWarnings("deprecation")
 	@Test
-	public void updateCompras() {
-		Compras c = compraService.read(5);
+	public void updateCompra() {
+		Compra c = compraService.read(5);
 		try {
 			c.setIdproveedor(4);
 			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
-			c.setPreciototal(100.10);
+			c.setTotal(100.10);
 			compraService.update(c);
 			System.out.println("Update");
 			System.out.println();
@@ -80,7 +80,7 @@ public class ComprasServiceImplTest {
 	}
 
 	@Test
-	public void deleteCompras() {
+	public void deleteCompra() {
 		try {
 			if (compraService.read(1) != null)
 				compraService.delete(1);

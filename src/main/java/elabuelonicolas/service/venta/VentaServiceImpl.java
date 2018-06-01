@@ -1,5 +1,6 @@
 package elabuelonicolas.service.venta; 
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -26,11 +27,46 @@ public class VentaServiceImpl implements VentaService{
 		return ventaDao.read(id);
 	}
 	
+	@Override
+	public List<Venta> readByIdCliente(int idCliente) {
+		return ventaDao.readByIdCliente(idCliente);
+	}
+
+	@Override
+	public List<Venta> readByFecha(Date fecha) {
+		return ventaDao.readByFecha(fecha);
+	}
+
+	@Override
+	public List<Venta> readByFechas(Date fechaInicio, Date fechaFin) {
+		return ventaDao.readByFechas(fechaInicio, fechaFin);
+	}
+	
 	public void update(Venta ventas) {
 		ventaDao.update(ventas);
 	}
 	
+	@Override
+	public void updateIdCliente(int id, int idCliente) {
+		ventaDao.updateIdCliente(id, idCliente);
+	}
+
+	@Override
+	public void updateFecha(int id, Date fecha) {
+		ventaDao.updateFecha(id, fecha);
+	}
+
+	@Override
+	public void updateTotal(int id, Double total) {
+		ventaDao.updateTotal(id, total);
+	}
+	
 	public void delete(int id) {
 		ventaDao.delete(id);
+	}
+
+	@Override
+	public Venta last() {
+		return ventaDao.last();
 	}
 }

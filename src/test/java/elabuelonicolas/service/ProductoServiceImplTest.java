@@ -39,7 +39,7 @@ public class ProductoServiceImplTest {
 		try {
 			c.setTipo("Balón");
 			c.setMarca("Puma");
-			c.setCosto("$120");
+			c.setCosto(120.5);
 			c.setExistencia(3);
 			productoService.create(c);
 			System.out.println("Create");
@@ -69,7 +69,7 @@ public class ProductoServiceImplTest {
 		try {
 			c.setTipo("Balón");
 			c.setMarca("Nike");
-			c.setCosto("$180");
+			c.setCosto(180.50);
 			c.setExistencia(1);
 			productoService.update(c);
 			System.out.println("Update");

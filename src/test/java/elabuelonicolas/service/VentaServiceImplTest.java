@@ -25,7 +25,6 @@ public class VentaServiceImplTest {
 			System.out.println("FindAll");
 			for (Venta v : lista) {
 				System.out.println("Id Cliente: " + v.getIdcliente());
-				System.out.println("Id Lista Venta: " + v.getIdlistaventa());
 				System.out.println("Fecha: " + v.getFecha());
 				System.out.println("Precio Total: " + v.getTotal());
 			}
@@ -40,7 +39,6 @@ public class VentaServiceImplTest {
 		
 		try {
 			v.setIdcliente(1);
-			v.setIdlistaventa(2);
 			v.setFecha(null);
 			v.setTotal(3200.40);
 		} catch(Exception e) {
@@ -53,7 +51,6 @@ public class VentaServiceImplTest {
 		try {
 			Venta v = ventaService.read(1);
 			System.out.println("Id Cliente: " + v.getIdcliente());
-			System.out.println("Id Lista Venta: " + v.getIdlistaventa());
 			System.out.println("Id Fecha: " + v.getFecha());
 			System.out.println("Id Precio Total: " + v.getTotal());
 		}catch(Exception e) {
@@ -66,7 +63,6 @@ public class VentaServiceImplTest {
 		Venta v = ventaService.read(2);
 		try {
 			v.setIdcliente(90);
-			v.setIdlistaventa(90);
 			v.setFecha(null);
 			v.setTotal(9.99);
 		}catch (Exception e) {

@@ -38,7 +38,6 @@ public class CompraServiceImplTest {
 		Compra c = new Compra();
 		try {
 			c.setIdproveedor(1);
-			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
 			c.setTotal(100.10);
 			compraService.create(c);
@@ -68,7 +67,6 @@ public class CompraServiceImplTest {
 		Compra c = compraService.read(5);
 		try {
 			c.setIdproveedor(4);
-			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
 			c.setTotal(100.10);
 			compraService.update(c);

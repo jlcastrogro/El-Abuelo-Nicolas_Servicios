@@ -21,7 +21,7 @@ public class FindAllTest {
 
 	@Before
 	public void setUp() {
-		this.clientes = 4;
+		this.clientes = clienteService.findAll().size();
 	}
 	
 	@After

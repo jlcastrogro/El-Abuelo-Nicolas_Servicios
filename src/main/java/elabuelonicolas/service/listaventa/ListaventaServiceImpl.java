@@ -26,11 +26,56 @@ public class ListaventaServiceImpl implements ListaventaService{
 		return listaventaDao.read(id);
 	}
 	
+	@Override
+	public List<Listaventa> readByIdVenta(int idventa) {
+		return listaventaDao.readByIdVenta(idventa);
+	}
+
+	@Override
+	public List<Listaventa> readByIdProducto(int idproducto) {
+		return listaventaDao.readByIdProducto(idproducto);
+	}
+
+	@Override
+	public List<Listaventa> readByCantidad(int cantidad) {
+		return listaventaDao.readByCantidad(cantidad);
+	}
+
+	@Override
+	public List<Listaventa> readBySubtotal(double subtotal) {
+		return listaventaDao.readBySubtotal(subtotal);
+	}
+	
 	public void update(Listaventa listaventas) {
 		listaventaDao.update(listaventas);
 	}
 	
+	@Override
+	public void updateIdVenta(int id, int idventa) {
+		listaventaDao.updateIdVenta(id, idventa);
+	}
+
+	@Override
+	public void updateIdProducto(int id, int idproducto) {
+		listaventaDao.updateIdProducto(id, idproducto);
+	}
+
+	@Override
+	public void updateCantidad(int id, int cantidad) {
+		listaventaDao.updateCantidad(id, cantidad);
+	}
+
+	@Override
+	public void updateSubtotal(int id, double subtotal) {
+		listaventaDao.updateSubtotal(id, subtotal);
+	}
+	
 	public void delete(int id) {
 		listaventaDao.delete(id);
+	}
+
+	@Override
+	public Listaventa last() {
+		return listaventaDao.last();
 	}
 }

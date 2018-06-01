@@ -9,13 +9,12 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listacompra;
-import elabuelonicolas.dao.listacompra.ListacompraDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class UpdateTest {
 	@Inject
-	ListacompraDao listacompraDao;
+	ListacompraService listacompraService;
 
 	private Listacompra listaCompra;
 	
@@ -27,26 +26,26 @@ public class UpdateTest {
 		this.listaCompra.setCantidad(10);
 		this.listaCompra.setSubtotal(100.12);
 		
-		listacompraDao.create(this.listaCompra);
+		listacompraService.create(this.listaCompra);
 
-		this.listaCompra.setId(listacompraDao.last().getId());
+		this.listaCompra.setId(listacompraService.last().getId());
 	}
 
 	@After
 	public void tearDown() {
-		listacompraDao.delete(this.listaCompra.getId());
+		listacompraService.delete(this.listaCompra.getId());
 	}
 
 	@Test
 	public void update() {
-		Listacompra c = listacompraDao.read(this.listaCompra.getId());
+		Listacompra c = listacompraService.read(this.listaCompra.getId());
 		try {
 			System.out.println("Update");
 			c.setIdcompra(2);
 			c.setIdproducto(5);
 			c.setCantidad(100);
 			c.setSubtotal(105.5);
-			listacompraDao.update(c);
+			listacompraService.update(c);
 		} catch (Exception e) {
 			System.out.println("Error updateListaCompraTest: " + e);
 		}
@@ -61,8 +60,8 @@ public class UpdateTest {
 	public void updateIdCompra() {
 		try {
 			System.out.println("UpdateProveedor");
-			listacompraDao.updateIdCompra(this.listaCompra.getId(), 2);
-			Listacompra c = listacompraDao.read(this.listaCompra.getId());
+			listacompraService.updateIdCompra(this.listaCompra.getId(), 2);
+			Listacompra c = listacompraService.read(this.listaCompra.getId());
 			assertNotEquals(c.getIdcompra(), this.listaCompra.getIdcompra());
 		} catch (Exception e) {
 			System.out.println("Error updateListaCompraProveedorTest: " + e);
@@ -73,8 +72,8 @@ public class UpdateTest {
 	public void updateSubtotal() {
 		try {
 			System.out.println("UpdateEmail");
-			listacompraDao.updateSubtotal(this.listaCompra.getId(), 100.112);
-			Listacompra c = listacompraDao.read(this.listaCompra.getId());
+			listacompraService.updateSubtotal(this.listaCompra.getId(), 100.112);
+			Listacompra c = listacompraService.read(this.listaCompra.getId());
 			assertNotEquals(c.getSubtotal(), this.listaCompra.getSubtotal());
 		} catch (Exception e) {
 			System.out.println("Error updateTotalTest: " + e);

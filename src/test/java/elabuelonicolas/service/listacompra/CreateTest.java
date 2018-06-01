@@ -9,13 +9,12 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listacompra;
-import elabuelonicolas.dao.listacompra.ListacompraDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class CreateTest {
 	@Inject
-	ListacompraDao listacompraDao;
+	ListacompraService listacompraService;
 
 	private Listacompra listacompra;
 	
@@ -30,14 +29,14 @@ public class CreateTest {
 
 	@After
 	public void tearDown() {
-		listacompraDao.delete(this.listacompra.getId());
+		listacompraService.delete(this.listacompra.getId());
 	}
 	
 	@Test
 	public void create() {
 		try {
-			listacompraDao.create(this.listacompra);
-			Listacompra c = listacompraDao.last();
+			listacompraService.create(this.listacompra);
+			Listacompra c = listacompraService.last();
 			
 			assertEquals(c.getIdcompra(), this.listacompra.getIdcompra());
 			

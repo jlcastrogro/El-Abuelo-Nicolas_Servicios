@@ -10,18 +10,17 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listacompra;
-import elabuelonicolas.dao.listacompra.ListacompraDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class FindAllTest {
 	@Inject
-	ListacompraDao listacompraDao;
+	ListacompraService listacompraService;
 	private Object listacompra;
 
 	@Before
 	public void setUp() {
-		this.listacompra = listacompraDao.findAll().size();
+		this.listacompra = listacompraService.findAll().size();
 	}
 	
 	@After
@@ -32,7 +31,7 @@ public class FindAllTest {
 	@Test
 	public void findAll() {
 		try {
-			List<Listacompra> list = listacompraDao.findAll();
+			List<Listacompra> list = listacompraService.findAll();
 			assertEquals(list.size(), this.listacompra);
 		} catch (Exception e) {
 			System.out.println("Error findAllCompraTest: " + e);

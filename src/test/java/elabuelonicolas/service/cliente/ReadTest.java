@@ -3,8 +3,6 @@ package elabuelonicolas.service.cliente;
 import static org.junit.Assert.assertEquals;
 import java.util.List;
 import javax.inject.Inject;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

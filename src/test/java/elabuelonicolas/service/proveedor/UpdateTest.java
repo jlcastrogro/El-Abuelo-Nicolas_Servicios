@@ -22,7 +22,7 @@ public class UpdateTest {
 	public void setUp() {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("MiniBodega");
-		this.proveedor.setIddireccion(2);
+		this.proveedor.setIddireccion(1);
 		this.proveedor.setContacto("Juan");
 		this.proveedor.setTelefono("9515787892");
 		this.proveedor.setEmail("juanmb@gmail.com");
@@ -35,7 +35,7 @@ public class UpdateTest {
 
 	@After
 	public void tearDown() {
-		this.proveedor = null;
+		proveedorService.delete(this.proveedor.getId());
 	}
 
 	@Test
@@ -44,7 +44,7 @@ public class UpdateTest {
 		try {
 			System.out.println("Update");
 			p.setNombre("Bodega");
-			p.setIddireccion(1);
+			p.setIddireccion(2);
 			p.setContacto("Jose");
 			p.setTelefono("987654321");
 			p.setEmail("joseortiz@outlook.com");

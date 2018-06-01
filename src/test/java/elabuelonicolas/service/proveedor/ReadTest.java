@@ -3,8 +3,6 @@ package elabuelonicolas.service.proveedor;
 import static org.junit.Assert.assertEquals;
 import java.util.List;
 import javax.inject.Inject;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -18,33 +16,11 @@ public class ReadTest {
 	@Inject
 	ProveedorService proveedorService;
 
-	private Proveedor proveedor;
-
-	@Before
-	public void setUp() {
-		this.proveedor = new Proveedor();
-		this.proveedor.setNombre("Similares");
-		this.proveedor.setIddireccion(2);
-		this.proveedor.setContacto("Juan");
-		this.proveedor.setTelefono("9551228766");
-		this.proveedor.setEmail("simihj@gmail.com");
-		this.proveedor.setRfc("SIMI874310YECMOI79");
-
-		proveedorService.create(this.proveedor);
-
-		this.proveedor.setId(proveedorService.last().getId());
-	}
-
-	@After
-	public void tearDown() {
-		this.proveedor = null;
-	}
-
 	@Test
 	public void read() {
 		try {
-			Proveedor p = proveedorService.read(this.proveedor.getId());
-			assertEquals(p.getId(), this.proveedor.getId());
+			Proveedor p = proveedorService.read(1);
+			assertEquals((int) p.getId(), 1);
 		} catch (Exception e) {
 			System.out.println("Error readTest: " + e);
 		}
@@ -53,8 +29,8 @@ public class ReadTest {
 	@Test
 	public void readByNombre() {
 		try {
-			List<Proveedor> proveedor = proveedorService.readByNombre(this.proveedor.getNombre());
-			assertEquals(proveedor.get(0).getNombre(), this.proveedor.getNombre());
+			List<Proveedor> proveedor = proveedorService.readByNombre("José Luis");
+			assertEquals(proveedor.get(0).getNombre(), "José Luis");
 		} catch (Exception e) {
 			System.out.println("Error readByNombreTest: " + e);
 		}
@@ -63,8 +39,8 @@ public class ReadTest {
 	@Test
 	public void readByDireccion() {
 		try {
-			Proveedor proveedor = proveedorService.readByDireccion(this.proveedor.getIddireccion());
-			assertEquals(proveedor.getIddireccion(), this.proveedor.getIddireccion());
+			Proveedor proveedor = proveedorService.readByDireccion(1);
+			assertEquals((int) proveedor.getIddireccion(), 1);
 		} catch (Exception e) {
 			System.out.println("Error readByDireccionTest: " + e);
 		}
@@ -73,8 +49,8 @@ public class ReadTest {
 	@Test
 	public void readByContacto() {
 		try {
-			List<Proveedor> proveedor = proveedorService.readByContacto(this.proveedor.getContacto());
-			assertEquals(proveedor.get(0).getContacto(), this.proveedor.getContacto());
+			List<Proveedor> proveedor = proveedorService.readByContacto("Nicolás");
+			assertEquals(proveedor.get(0).getContacto(), "Nicolás");
 		} catch (Exception e) {
 			System.out.println("Error readByContactoTest: " + e);
 		}
@@ -83,8 +59,8 @@ public class ReadTest {
 	@Test
 	public void readByTelefono() {
 		try {
-			List<Proveedor> proveedor = proveedorService.readByTelefono(this.proveedor.getTelefono());
-			assertEquals(proveedor.get(0).getTelefono(), this.proveedor.getTelefono());
+			List<Proveedor> proveedor = proveedorService.readByTelefono("351354343");
+			assertEquals(proveedor.get(0).getTelefono(), "351354343");
 		} catch (Exception e) {
 			System.out.println("Error readByTelefonoTest: " + e);
 		}
@@ -93,8 +69,8 @@ public class ReadTest {
 	@Test
 	public void readByEmail() {
 		try {
-			List<Proveedor> proveedor = proveedorService.readByEmail(this.proveedor.getEmail());
-			assertEquals(proveedor.get(0).getEmail(), this.proveedor.getEmail());
+			List<Proveedor> proveedor = proveedorService.readByEmail("josejaime@gmail.com");
+			assertEquals(proveedor.get(0).getEmail(), "josejaime@gmail.com");
 		} catch (Exception e) {
 			System.out.println("Error readByEmailTest: " + e);
 		}
@@ -103,8 +79,8 @@ public class ReadTest {
 	@Test
 	public void readByRfc() {
 		try {
-			List<Proveedor> proveedor = proveedorService.readByRfc(this.proveedor.getRfc());
-			assertEquals(proveedor.get(0).getRfc(), this.proveedor.getRfc());
+			List<Proveedor> proveedor = proveedorService.readByRfc("UHS2K28HJ3N3");
+			assertEquals(proveedor.get(0).getRfc(), "UHS2K28HJ3N3");
 		} catch (Exception e) {
 			System.out.println("Error readByRfcTest: " + e);
 		}

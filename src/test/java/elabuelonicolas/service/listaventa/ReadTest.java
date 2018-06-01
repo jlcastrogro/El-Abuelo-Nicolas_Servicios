@@ -8,18 +8,17 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listaventa;
-import elabuelonicolas.dao.listaventa.ListaventaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class ReadTest {
 	@Inject
-	ListaventaDao listaventaDao;
+	ListaventaService listaventaService;
 
 	@Test
 	public void read() {
 		try {
-			Listaventa venta = listaventaDao.read(1);
+			Listaventa venta = listaventaService.read(1);
 			assertEquals(venta.getId(), 1, 1);
 		} catch (Exception e) {
 			System.out.println("Error readTest: " + e);
@@ -29,7 +28,7 @@ public class ReadTest {
 	@Test
 	public void readByIdVenta() {
 		try {
-			List<Listaventa> listaventa = listaventaDao.readByIdVenta(1);
+			List<Listaventa> listaventa = listaventaService.readByIdVenta(1);
 			assertEquals(listaventa.get(0).getIdventa(), 1, 1);
 		} catch (Exception e) {
 			System.out.println("Error readByIdVentaTest: " + e);
@@ -39,7 +38,7 @@ public class ReadTest {
 	@Test
 	public void readByProducto() {
 		try {
-			List<Listaventa> listaventa = listaventaDao.readByIdProducto(1);
+			List<Listaventa> listaventa = listaventaService.readByIdProducto(1);
 			assertEquals(listaventa.get(0).getIdventa(), 1, 1);
 		} catch (Exception e) {
 			System.out.println("Error readByProductoTest: " + e);
@@ -49,7 +48,7 @@ public class ReadTest {
 	@Test
 	public void readByCantidad() {
 		try {
-			List<Listaventa> listaventa = listaventaDao.readByCantidad(1);
+			List<Listaventa> listaventa = listaventaService.readByCantidad(1);
 			assertEquals(listaventa.get(0).getCantidad(), 1, 1);
 		} catch (Exception e) {
 			System.out.println("Error readByCantidadTest: " + e);
@@ -59,7 +58,7 @@ public class ReadTest {
 	@Test
 	public void readBySubtotal() {
 		try {
-			List<Listaventa> listaventa = listaventaDao.readBySubtotal(1553.5);
+			List<Listaventa> listaventa = listaventaService.readBySubtotal(1553.5);
 			assertEquals(listaventa.get(0).getSubtotal(), 1553.5, 1);
 		} catch (Exception e) {
 			System.out.println("Error readBySubtotalTest: " + e);

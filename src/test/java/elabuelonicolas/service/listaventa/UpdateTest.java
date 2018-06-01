@@ -9,13 +9,12 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listaventa;
-import elabuelonicolas.dao.listaventa.ListaventaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class UpdateTest {
 	@Inject
-	ListaventaDao listaventaDao;
+	ListaventaService listaventaService;
 
 	private Listaventa listaventa;
 	
@@ -27,26 +26,26 @@ public class UpdateTest {
 		this.listaventa.setCantidad(10);
 		this.listaventa.setSubtotal(100.12);
 		
-		listaventaDao.create(this.listaventa);
+		listaventaService.create(this.listaventa);
 
-		this.listaventa.setId(listaventaDao.last().getId());
+		this.listaventa.setId(listaventaService.last().getId());
 	}
 
 	@After
 	public void tearDown() {
-		listaventaDao.delete(this.listaventa.getId());
+		listaventaService.delete(this.listaventa.getId());
 	}
 
 	@Test
 	public void update() {
-		Listaventa c = listaventaDao.read(this.listaventa.getId());
+		Listaventa c = listaventaService.read(this.listaventa.getId());
 		try {
 			System.out.println("Update");
 			c.setIdventa(2);
 			c.setIdproducto(5);
 			c.setCantidad(100);
 			c.setSubtotal(105.5);
-			listaventaDao.update(c);
+			listaventaService.update(c);
 		} catch (Exception e) {
 			System.out.println("Error updateListaCompraTest: " + e);
 		}
@@ -61,8 +60,8 @@ public class UpdateTest {
 	public void updateIdVenta() {
 		try {
 			System.out.println("UpdateProveedor");
-			listaventaDao.updateIdVenta(this.listaventa.getId(), 2);
-			Listaventa c = listaventaDao.read(this.listaventa.getId());
+			listaventaService.updateIdVenta(this.listaventa.getId(), 2);
+			Listaventa c = listaventaService.read(this.listaventa.getId());
 			assertNotEquals(c.getIdventa(), this.listaventa.getIdventa());
 		} catch (Exception e) {
 			System.out.println("Error updateListaCompraTest: " + e);
@@ -73,8 +72,8 @@ public class UpdateTest {
 	public void updateSubtotal() {
 		try {
 			System.out.println("UpdateEmail");
-			listaventaDao.updateSubtotal(this.listaventa.getId(), 100.112);
-			Listaventa c = listaventaDao.read(this.listaventa.getId());
+			listaventaService.updateSubtotal(this.listaventa.getId(), 100.112);
+			Listaventa c = listaventaService.read(this.listaventa.getId());
 			assertNotEquals(c.getSubtotal(), this.listaventa.getSubtotal());
 		} catch (Exception e) {
 			System.out.println("Error updateSubtotalTest: " + e);

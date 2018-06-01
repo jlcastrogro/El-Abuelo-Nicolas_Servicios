@@ -9,13 +9,12 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listaventa;
-import elabuelonicolas.dao.listaventa.ListaventaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
 	@Inject
-	ListaventaDao ListaventaDao;
+	ListaventaService ListaventaService;
 
 	private Listaventa listaventa;
 	
@@ -36,12 +35,12 @@ public class DeleteTest {
 	@Test
 	public void delete() {
 		try {
-			ListaventaDao.create(this.listaventa);
-			this.listaventa.setId(ListaventaDao.last().getId());
+			ListaventaService.create(this.listaventa);
+			this.listaventa.setId(ListaventaService.last().getId());
 			int id = this.listaventa.getId();
 
-			ListaventaDao.delete(id);
-			Listaventa c = ListaventaDao.read(id);
+			ListaventaService.delete(id);
+			Listaventa c = ListaventaService.read(id);
 
 			assertNull(c);
 		} catch (Exception e) {

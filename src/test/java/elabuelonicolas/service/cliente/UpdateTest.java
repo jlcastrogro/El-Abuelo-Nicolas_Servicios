@@ -22,7 +22,7 @@ public class UpdateTest {
 	public void setUp() {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("Pedro");
-		this.cliente.setIddireccion(2);
+		this.cliente.setIddireccion(5);
 		this.cliente.setContacto("José");
 		this.cliente.setTelefono("9515787892");
 		this.cliente.setEmail("pedro@gmail.com");
@@ -35,7 +35,7 @@ public class UpdateTest {
 
 	@After
 	public void tearDown() {
-		this.cliente = null;
+		clienteService.delete(this.cliente.getId());
 	}
 
 	@Test
@@ -44,7 +44,7 @@ public class UpdateTest {
 		try {
 			System.out.println("Update");
 			c.setNombre("Luis");
-			c.setIddireccion(3);
+			c.setIddireccion(2);
 			c.setContacto("Guerrero");
 			c.setTelefono("9535362398");
 			c.setEmail("jlcastrogro@outlook.com");

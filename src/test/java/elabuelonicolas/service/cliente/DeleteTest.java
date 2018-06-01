@@ -14,7 +14,6 @@ import elabuelonicolas.service.cliente.ClienteService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
-
 	@Inject
 	ClienteService clienteService;
 
@@ -25,7 +24,7 @@ public class DeleteTest {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("Luis");
 		this.cliente.setContacto("Josué");
-		this.cliente.setIddireccion(1);
+		this.cliente.setIddireccion(5);
 		this.cliente.setEmail("castrogro@gmail.com");
 		this.cliente.setRfc("JACG950419HOCSRS00");
 		this.cliente.setTelefono("955007892");

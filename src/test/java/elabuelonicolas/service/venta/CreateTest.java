@@ -18,7 +18,7 @@ public class CreateTest {
 	@Inject
 	VentaService ventaService;
 
-	private Venta venta;
+	private Venta venta; 
 	
 	@Before
 	public void setUp() {

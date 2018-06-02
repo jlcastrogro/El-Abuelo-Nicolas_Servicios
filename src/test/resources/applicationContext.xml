@@ -14,7 +14,7 @@
 						http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
 	<context:component-scan
-		base-package="elabuelonicolas" />
+		base-package="elabuelonicolas" /> 
 
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">

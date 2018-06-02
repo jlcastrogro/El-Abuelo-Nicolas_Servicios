@@ -11,18 +11,18 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import elabuelonicolas.bd.domain.Producto;
-import elabuelonicolas.dao.producto.ProductoDao;
+import elabuelonicolas.service.producto.ProductoService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class FindAllTest {
 	@Inject
-	ProductoDao productoDao;
+	ProductoService productoService;
 	private Object proveedor;
 
 	@Before
 	public void setUp() {
-		this.proveedor = productoDao.findAll().size();
+		this.proveedor = productoService.findAll().size();
 	}
 	
 	@After
@@ -33,7 +33,7 @@ public class FindAllTest {
 	@Test
 	public void findAll() {
 		try {
-			List<Producto> list = productoDao.findAll();
+			List<Producto> list = productoService.findAll();
 			assertEquals(list.size(), this.proveedor);
 		} catch (Exception e) {
 			System.out.println("Error findAllTest: " + e);

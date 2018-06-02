@@ -9,13 +9,13 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Producto;
-import elabuelonicolas.dao.producto.ProductoDao;
+import elabuelonicolas.service.producto.ProductoService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
 	@Inject
-	ProductoDao productoDao;
+	ProductoService productoService;
 
 	private Producto producto;
 
@@ -26,8 +26,8 @@ public class DeleteTest {
 		this.producto.setMarca("Puma");
 		this.producto.setCosto(310.1);
 		this.producto.setExistencia(12);
-		productoDao.create(this.producto);
-		this.producto.setId(productoDao.last().getId());
+		productoService.create(this.producto);
+		this.producto.setId(productoService.last().getId());
 	}
 
 	@After
@@ -40,8 +40,8 @@ public class DeleteTest {
 		try {
 			int id = this.producto.getId();
 			
-			productoDao.delete(id);
-			Producto p = productoDao.read(id);
+			productoService.delete(id);
+			Producto p = productoService.read(id);
 
 			assertNull(p);
 		} catch (Exception e) {

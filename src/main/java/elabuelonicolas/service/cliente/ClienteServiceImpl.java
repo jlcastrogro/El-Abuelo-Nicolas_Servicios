@@ -31,8 +31,8 @@ public class ClienteServiceImpl implements ClienteService {
 		return clienteDao.readByNombre(nombre);
 	}
 
-	public Cliente readByDireccion(int idDireccion) {
-		return clienteDao.readByDireccion(idDireccion);
+	public Cliente readByDireccion(int iddireccion) {
+		return clienteDao.readByDireccion(iddireccion);
 	}
 
 	public List<Cliente> readByContacto(String contacto) {

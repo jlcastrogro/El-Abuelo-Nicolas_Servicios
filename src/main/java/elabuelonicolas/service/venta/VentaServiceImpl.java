@@ -28,8 +28,8 @@ public class VentaServiceImpl implements VentaService{
 	}
 	
 	@Override
-	public List<Venta> readByIdCliente(int idCliente) {
-		return ventaDao.readByIdCliente(idCliente);
+	public List<Venta> readByIdCliente(int idcliente) {
+		return ventaDao.readByIdCliente(idcliente);
 	}
 
 	@Override
@@ -38,8 +38,8 @@ public class VentaServiceImpl implements VentaService{
 	}
 
 	@Override
-	public List<Venta> readByFechas(Date fechaInicio, Date fechaFin) {
-		return ventaDao.readByFechas(fechaInicio, fechaFin);
+	public List<Venta> readByFechas(Date fechainicio, Date fechafin) {
+		return ventaDao.readByFechas(fechainicio, fechafin);
 	}
 	
 	public void update(Venta ventas) {
@@ -47,8 +47,8 @@ public class VentaServiceImpl implements VentaService{
 	}
 	
 	@Override
-	public void updateIdCliente(int id, int idCliente) {
-		ventaDao.updateIdCliente(id, idCliente);
+	public void updateIdCliente(int id, int idcliente) {
+		ventaDao.updateIdCliente(id, idcliente);
 	}
 
 	@Override

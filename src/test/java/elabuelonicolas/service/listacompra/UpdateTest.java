@@ -40,7 +40,6 @@ public class UpdateTest {
 	public void update() {
 		Listacompra c = listacompraService.read(this.listaCompra.getId());
 		try {
-			System.out.println("Update");
 			c.setIdcompra(2);
 			c.setIdproducto(5);
 			c.setCantidad(100);
@@ -59,24 +58,22 @@ public class UpdateTest {
 	@Test
 	public void updateIdCompra() {
 		try {
-			System.out.println("UpdateProveedor");
 			listacompraService.updateIdCompra(this.listaCompra.getId(), 2);
 			Listacompra c = listacompraService.read(this.listaCompra.getId());
 			assertNotEquals(c.getIdcompra(), this.listaCompra.getIdcompra());
 		} catch (Exception e) {
-			System.out.println("Error updateListaCompraProveedorTest: " + e);
+			System.out.println("Error updateListaCompraIdCompraTest: " + e);
 		}
 	}
 
 	@Test
 	public void updateSubtotal() {
 		try {
-			System.out.println("UpdateEmail");
 			listacompraService.updateSubtotal(this.listaCompra.getId(), 100.112);
 			Listacompra c = listacompraService.read(this.listaCompra.getId());
 			assertNotEquals(c.getSubtotal(), this.listaCompra.getSubtotal());
 		} catch (Exception e) {
-			System.out.println("Error updateTotalTest: " + e);
+			System.out.println("Error updateListacompraSubtotalTest: " + e);
 		}
 	}
 }

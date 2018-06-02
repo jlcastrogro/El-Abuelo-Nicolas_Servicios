@@ -15,7 +15,7 @@ public interface ProveedorService {
 	
 	List<Proveedor> readByNombre(String nombre);
 
-	Proveedor readByDireccion(int idDireccion);
+	Proveedor readByDireccion(int iddireccion);
 
 	List<Proveedor> readByContacto(String nombre);
 

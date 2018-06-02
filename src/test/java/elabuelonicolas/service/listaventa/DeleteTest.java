@@ -14,7 +14,7 @@ import elabuelonicolas.bd.domain.Listaventa;
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
 	@Inject
-	ListaventaService ListaventaService;
+	ListaventaService listaventaService;
 
 	private Listaventa listaventa;
 	
@@ -35,12 +35,12 @@ public class DeleteTest {
 	@Test
 	public void delete() {
 		try {
-			ListaventaService.create(this.listaventa);
-			this.listaventa.setId(ListaventaService.last().getId());
+			listaventaService.create(this.listaventa);
+			this.listaventa.setId(listaventaService.last().getId());
 			int id = this.listaventa.getId();
 
-			ListaventaService.delete(id);
-			Listaventa c = ListaventaService.read(id);
+			listaventaService.delete(id);
+			Listaventa c = listaventaService.read(id);
 
 			assertNull(c);
 		} catch (Exception e) {

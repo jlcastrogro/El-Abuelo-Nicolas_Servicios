@@ -50,7 +50,7 @@ public class ListacompraServiceImpl implements ListacompraService{
 
 	@Override
 	public void updateIdCompra(int id, int idcompra) {
-		listacompraDao.updateIdProducto(id, idcompra);
+		listacompraDao.updateIdCompra(id, idcompra);
 	}
 
 	@Override

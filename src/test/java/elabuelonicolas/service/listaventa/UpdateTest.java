@@ -40,7 +40,6 @@ public class UpdateTest {
 	public void update() {
 		Listaventa c = listaventaService.read(this.listaventa.getId());
 		try {
-			System.out.println("Update");
 			c.setIdventa(2);
 			c.setIdproducto(5);
 			c.setCantidad(100);
@@ -59,7 +58,6 @@ public class UpdateTest {
 	@Test
 	public void updateIdVenta() {
 		try {
-			System.out.println("UpdateProveedor");
 			listaventaService.updateIdVenta(this.listaventa.getId(), 2);
 			Listaventa c = listaventaService.read(this.listaventa.getId());
 			assertNotEquals(c.getIdventa(), this.listaventa.getIdventa());
@@ -71,7 +69,6 @@ public class UpdateTest {
 	@Test
 	public void updateSubtotal() {
 		try {
-			System.out.println("UpdateEmail");
 			listaventaService.updateSubtotal(this.listaventa.getId(), 100.112);
 			Listaventa c = listaventaService.read(this.listaventa.getId());
 			assertNotEquals(c.getSubtotal(), this.listaventa.getSubtotal());

@@ -42,7 +42,6 @@ public class UpdateTest {
 	public void update() {
 		Proveedor p = proveedorService.read(this.proveedor.getId());
 		try {
-			System.out.println("Update");
 			p.setNombre("Bodega");
 			p.setIddireccion(2);
 			p.setContacto("Jose");
@@ -65,7 +64,6 @@ public class UpdateTest {
 	@Test
 	public void updateNombre() {
 		try {
-			System.out.println("UpdateName");
 			proveedorService.updateNombre(this.proveedor.getId(), "Jaime");
 			Proveedor p = proveedorService.read(this.proveedor.getId());
 			assertNotEquals(p.getNombre(), this.proveedor.getNombre());
@@ -77,7 +75,6 @@ public class UpdateTest {
 	@Test
 	public void updateContacto() {
 		try {
-			System.out.println("UpdateContact");
 			proveedorService.updateContacto(this.proveedor.getId(), "Egremy");
 			Proveedor p = proveedorService.read(this.proveedor.getId());
 			assertNotEquals(p.getContacto(), this.proveedor.getContacto());
@@ -89,7 +86,6 @@ public class UpdateTest {
 	@Test
 	public void updateTelefono() {
 		try {
-			System.out.println("UpdateNumber");
 			proveedorService.updateTelefono(this.proveedor.getId(), "192929929");
 			Proveedor p = proveedorService.read(this.proveedor.getId());
 			assertNotEquals(p.getTelefono(), this.proveedor.getTelefono());
@@ -101,7 +97,6 @@ public class UpdateTest {
 	@Test
 	public void updateEmail() {
 		try {
-			System.out.println("UpdateEmail");
 			proveedorService.updateEmail(this.proveedor.getId(), "ajsknas@hotmail.com");
 			Proveedor p = proveedorService.read(this.proveedor.getId());
 			assertNotEquals(p.getEmail(), this.proveedor.getTelefono());
@@ -113,7 +108,6 @@ public class UpdateTest {
 	@Test
 	public void updateRfc() {
 		try {
-			System.out.println("UpdateRfc");
 			proveedorService.updateRfc(this.proveedor.getId(), "KWUBEUW8B38DNW");
 			Proveedor p = proveedorService.read(this.proveedor.getId());
 			assertNotEquals(p.getRfc(), this.proveedor.getRfc());

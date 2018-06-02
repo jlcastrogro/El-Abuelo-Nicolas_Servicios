@@ -31,8 +31,8 @@ public class ProveedorServiceImpl implements ProveedorService {
 		return proveedorDao.readByNombre(nombre);
 	}
 
-	public Proveedor readByDireccion(int idDireccion) {
-		return proveedorDao.readByDireccion(idDireccion);
+	public Proveedor readByDireccion(int iddireccion) {
+		return proveedorDao.readByDireccion(iddireccion);
 	}
 
 	public List<Proveedor> readByContacto(String contacto) {

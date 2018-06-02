@@ -38,7 +38,6 @@ public class UpdateTest {
 	public void update() {
 		Producto p = productoService.read(this.producto.getId());
 		try {
-			System.out.println("Update");
 			p = new Producto();
 			p.setTipo("Camisa");
 			p.setMarca("Pirma");
@@ -58,7 +57,6 @@ public class UpdateTest {
 	@Test
 	public void updateTipo() {
 		try {
-			System.out.println("updateTipo");
 			productoService.updateTipo(this.producto.getId(), "Playera");
 			Producto p = productoService.read(this.producto.getId());
 			assertNotEquals(p.getTipo(), this.producto.getTipo());
@@ -70,7 +68,6 @@ public class UpdateTest {
 	@Test
 	public void updateMarca() {
 		try {
-			System.out.println("updateMarca");
 			productoService.updateMarca(this.producto.getId(), "Nice");
 			Producto p = productoService.read(this.producto.getId());
 			assertNotEquals(p.getMarca(), this.producto.getMarca());
@@ -82,7 +79,6 @@ public class UpdateTest {
 	@Test
 	public void updateCosto() {
 		try {
-			System.out.println("updateCosto");
 			productoService.updateCosto(this.producto.getId(), 100.0);
 			Producto p = productoService.read(this.producto.getId());
 			assertNotEquals(p.getCosto(), this.producto.getCosto(), 1);
@@ -94,7 +90,6 @@ public class UpdateTest {
 	@Test
 	public void updateExistencia() {
 		try {
-			System.out.println("updateExistencia");
 			productoService.updateExistencia(this.producto.getId(), 20);
 			Producto p = productoService.read(this.producto.getId());
 			assertNotEquals(p.getExistencia(), this.producto.getExistencia(), 1);

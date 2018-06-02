@@ -40,7 +40,6 @@ public class UpdateTest {
 	public void update() {
 		Venta v = ventaService.read(this.venta.getId());
 		try {
-			System.out.println("Update");
 			v.setIdcliente(2);
 			v.setFecha(Date.valueOf("2018-5-2"));
 			v.setTotal(1920812.1);
@@ -57,7 +56,6 @@ public class UpdateTest {
 	@Test
 	public void updateIdCliente() {
 		try {
-			System.out.println("UpdateIdCliente");
 			ventaService.updateIdCliente(this.venta.getId(), 10);
 			Venta v = ventaService.read(this.venta.getId());
 			assertNotEquals(v.getIdcliente(), this.venta.getIdcliente());
@@ -69,7 +67,6 @@ public class UpdateTest {
 	@Test
 	public void updateFecha() {
 		try {
-			System.out.println("UpdateFecha");
 			ventaService.updateFecha(this.venta.getId(), Date.valueOf("2018-5-10"));
 			Venta c = ventaService.read(this.venta.getId());
 			assertNotEquals(c.getFecha(), this.venta.getFecha());
@@ -81,7 +78,6 @@ public class UpdateTest {
 	@Test
 	public void updatePrecioTotal() {
 		try {
-			System.out.println("UpdatePrecioTotal");
 			ventaService.updateTotal(this.venta.getId(), 1000.1);
 			Venta v = ventaService.read(this.venta.getId());
 			assertNotEquals(v.getTotal(), this.venta.getTotal());

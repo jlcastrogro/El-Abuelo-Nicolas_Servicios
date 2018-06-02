@@ -15,7 +15,7 @@ public interface ClienteService {
 
 	List<Cliente> readByNombre(String nombre);
 
-	Cliente readByDireccion(int idDireccion);
+	Cliente readByDireccion(int iddireccion);
 
 	List<Cliente> readByContacto(String nombre);
 

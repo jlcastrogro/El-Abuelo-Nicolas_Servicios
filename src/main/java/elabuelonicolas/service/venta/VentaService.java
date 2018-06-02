@@ -15,15 +15,15 @@ public interface VentaService {
 
 	Venta read(int id);
 
-	List<Venta> readByIdCliente(int idCliente);
+	List<Venta> readByIdCliente(int idcliente);
 
 	List<Venta> readByFecha(Date fecha);
 
-	List<Venta> readByFechas(@Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin);
+	List<Venta> readByFechas(@Param("fechainicio") Date fechainicio, @Param("fechafin") Date fechafin);
 
 	void update(Venta venta);
 
-	void updateIdCliente(@Param("id") int id, @Param("idCliente") int idCliente);
+	void updateIdCliente(@Param("id") int id, @Param("idCliente") int idcliente);
 
 	void updateFecha(@Param("id") int id, @Param("fecha") Date fecha);
 

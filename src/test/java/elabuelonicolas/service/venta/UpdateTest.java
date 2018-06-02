@@ -10,13 +10,13 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Venta;
-import elabuelonicolas.dao.venta.VentaDao;
+import elabuelonicolas.service.venta.VentaService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class UpdateTest {
 	@Inject
-	VentaDao ventaDao;
+	VentaService ventaService;
 	private Venta venta;
 
 	@Before
@@ -26,25 +26,25 @@ public class UpdateTest {
 		this.venta.setFecha(Date.valueOf("2018-5-1"));
 		this.venta.setTotal(100.10);
 
-		ventaDao.create(this.venta);
+		ventaService.create(this.venta);
 
-		this.venta.setId(ventaDao.last().getId());
+		this.venta.setId(ventaService.last().getId());
 	}
 
 	@After
 	public void tearDown() {
-		ventaDao.delete(this.venta.getId());
+		ventaService.delete(this.venta.getId());
 	}
 
 	@Test
 	public void update() {
-		Venta v = ventaDao.read(this.venta.getId());
+		Venta v = ventaService.read(this.venta.getId());
 		try {
 			System.out.println("Update");
 			v.setIdcliente(2);
 			v.setFecha(Date.valueOf("2018-5-2"));
 			v.setTotal(1920812.1);
-			ventaDao.update(v);
+			ventaService.update(v);
 		} catch (Exception e) {
 			System.out.println("Error updateTest: " + e);
 		}
@@ -58,8 +58,8 @@ public class UpdateTest {
 	public void updateIdCliente() {
 		try {
 			System.out.println("UpdateIdCliente");
-			ventaDao.updateIdCliente(this.venta.getId(), 10);
-			Venta v = ventaDao.read(this.venta.getId());
+			ventaService.updateIdCliente(this.venta.getId(), 10);
+			Venta v = ventaService.read(this.venta.getId());
 			assertNotEquals(v.getIdcliente(), this.venta.getIdcliente());
 		} catch (Exception e) {
 			System.out.println("Error updateIdClienteTest: " + e);
@@ -70,8 +70,8 @@ public class UpdateTest {
 	public void updateFecha() {
 		try {
 			System.out.println("UpdateFecha");
-			ventaDao.updateFecha(this.venta.getId(), Date.valueOf("2018-5-10"));
-			Venta c = ventaDao.read(this.venta.getId());
+			ventaService.updateFecha(this.venta.getId(), Date.valueOf("2018-5-10"));
+			Venta c = ventaService.read(this.venta.getId());
 			assertNotEquals(c.getFecha(), this.venta.getFecha());
 		} catch (Exception e) {
 			System.out.println("Error updateFechaTest: " + e);
@@ -82,8 +82,8 @@ public class UpdateTest {
 	public void updatePrecioTotal() {
 		try {
 			System.out.println("UpdatePrecioTotal");
-			ventaDao.updateTotal(this.venta.getId(), 1000.1);
-			Venta v = ventaDao.read(this.venta.getId());
+			ventaService.updateTotal(this.venta.getId(), 1000.1);
+			Venta v = ventaService.read(this.venta.getId());
 			assertNotEquals(v.getTotal(), this.venta.getTotal());
 		} catch (Exception e) {
 			System.out.println("Error updatePrecioTotalTest: " + e);

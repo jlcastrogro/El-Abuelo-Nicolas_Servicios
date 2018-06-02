@@ -10,13 +10,13 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Venta;
-import elabuelonicolas.dao.venta.VentaDao;
+import elabuelonicolas.service.venta.VentaService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
 	@Inject
-	VentaDao ventaDao;
+	VentaService ventaService;
 
 	private Venta venta;
 
@@ -26,8 +26,8 @@ public class DeleteTest {
 		this.venta.setIdcliente(1);
 		this.venta.setFecha(Date.valueOf("2018-1-1"));
 		this.venta.setTotal(100.10);
-		ventaDao.create(this.venta);
-		this.venta.setId(ventaDao.last().getId());
+		ventaService.create(this.venta);
+		this.venta.setId(ventaService.last().getId());
 	}
 
 	@After
@@ -38,10 +38,10 @@ public class DeleteTest {
 	@Test
 	public void delete() {
 		try {
-			ventaDao.delete(this.venta.getId());
+			ventaService.delete(this.venta.getId());
 
 			int id = this.venta.getId();
-			Venta v = ventaDao.read(id);
+			Venta v = ventaService.read(id);
 
 			assertNull(v);
 		} catch (Exception e) {

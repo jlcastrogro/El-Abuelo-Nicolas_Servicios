@@ -1,5 +1,5 @@
 package elabuelonicolas.service.venta; 
-
+ 
 import static org.junit.Assert.assertNull;
 import java.sql.Date;
 import javax.inject.Inject;

@@ -36,7 +36,7 @@ public class DireccionServiceImpl implements DireccionService {
 			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
 			direccionMapper.create(direccion);
 		} catch (Exception e) {
-			System.out.println("Error create: " + e);
+			System.out.println("Error createSDI: " + e);
 		}
 	}
 

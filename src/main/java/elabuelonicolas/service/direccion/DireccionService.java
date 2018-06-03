@@ -28,15 +28,15 @@ public interface DireccionService {
 	
 	void updatePais(@Param("id") int id, @Param("pais") String pais);
 	
-	void updateEstado(@Param("id") int id, @Param("pais") String estado);
+	void updateEstado(@Param("id") int id, @Param("estado") String estado);
 	
-	void updateCiudad(@Param("id") int id, @Param("pais") String ciudad);
+	void updateCiudad(@Param("id") int id, @Param("ciudad") String ciudad);
 	
-	void updateColonia(@Param("id") int id, @Param("pais") String colonia);
+	void updateColonia(@Param("id") int id, @Param("colonia") String colonia);
 	
-	void updateCalle(@Param("id") int id, @Param("pais") String calle);
+	void updateCalle(@Param("id") int id, @Param("calle") String calle);
 	
-	void updateNumero(@Param("id") int id, @Param("pais") int numero );
+	void updateNumero(@Param("id") int id, @Param("numero") int numero );
 	
 	void delete(int id);
 	

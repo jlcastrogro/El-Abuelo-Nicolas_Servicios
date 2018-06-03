@@ -9,5 +9,6 @@
 		<mapper resource="elabuelonicolas/bd/mappers/CompraMapper.xml" />
 		<mapper resource="elabuelonicolas/bd/mappers/ListacompraMapper.xml" />
 		<mapper resource="elabuelonicolas/bd/mappers/ProveedorMapper.xml" />
+		<mapper resource="elabuelonicolas/bd/mappers/DireccionMapper.xml" />
 	</mappers> 
 </configuration>

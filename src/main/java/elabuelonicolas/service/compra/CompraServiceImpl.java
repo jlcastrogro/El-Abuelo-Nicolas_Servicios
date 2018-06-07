@@ -1,6 +1,6 @@
 package elabuelonicolas.service.compra;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;

@@ -42,6 +42,21 @@ public class VentaServiceImpl implements VentaService{
 		return ventaDao.readByFechas(fechainicio, fechafin);
 	}
 	
+	@Override
+	public List<Venta> readByTotal(Double total) {
+		return ventaDao.readByTotal(total);
+	}
+
+	@Override
+	public List<Venta> readByTotalReal(Double totalreal) {
+		return ventaDao.readByTotalReal(totalreal);
+	}
+
+	@Override
+	public List<Venta> readByGanancia(Double ganancia) {
+		return ventaDao.readByGanancia(ganancia);
+	}
+	
 	public void update(Venta ventas) {
 		ventaDao.update(ventas);
 	}
@@ -59,6 +74,16 @@ public class VentaServiceImpl implements VentaService{
 	@Override
 	public void updateTotal(int id, Double total) {
 		ventaDao.updateTotal(id, total);
+	}
+	
+	@Override
+	public void updateTotalReal(int id, Double totalreal) {
+		ventaDao.updateTotalReal(id, totalreal);
+	}
+
+	@Override
+	public void updateGanancia(int id, Double ganancia) {
+		ventaDao.updateGanancia(id, ganancia);
 	}
 	
 	public void delete(int id) {

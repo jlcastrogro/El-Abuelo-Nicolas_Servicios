@@ -24,8 +24,10 @@ public class DeleteTest {
 		this.producto = new Producto();
 		this.producto.setTipo("Balón");
 		this.producto.setMarca("Puma");
-		this.producto.setCosto(310.1);
+		this.producto.setCostocompra(3.1);
+		this.producto.setCostoventa(3.1);
 		this.producto.setExistencia(12);
+		this.producto.setStatus(1);
 		productoService.create(this.producto);
 		this.producto.setId(productoService.last().getId());
 	}
@@ -45,7 +47,7 @@ public class DeleteTest {
 
 			assertNull(p);
 		} catch (Exception e) {
-			System.out.println("Error deleteTest: " + e);
+			System.out.println("Error deleteProductoTest: " + e);
 		}
 	}
 }

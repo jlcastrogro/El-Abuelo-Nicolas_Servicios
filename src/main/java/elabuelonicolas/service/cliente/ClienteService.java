@@ -15,15 +15,29 @@ public interface ClienteService {
 
 	List<Cliente> readByNombre(String nombre);
 
-	Cliente readByDireccion(int iddireccion);
+	List<Cliente> readByContacto(String contacto);
 
-	List<Cliente> readByContacto(String nombre);
+	Cliente readByTelefono(String telefono);
 
-	List<Cliente> readByTelefono(String telefono);
+	Cliente readByEmail(String email);
 
-	List<Cliente> readByEmail(String email);
+	Cliente readByRfc(String rfc);
 
-	List<Cliente> readByRfc(String rfc);
+	List<Cliente> readByEstado(String estado);
+
+	List<Cliente> readByMunicipio(String municipio);
+
+	List<Cliente> readByLocalidad(String localidad);
+
+	List<Cliente> readByCodigoPostal(String codigopostal);
+
+	List<Cliente> readByAsentamiento(String asentamiento);
+
+	List<Cliente> readByCalle(String calle);
+
+	List<Cliente> readByNumero(String numero);
+
+	List<Cliente> readByStatus(String status);
 
 	void update(Cliente cliente);
 
@@ -37,7 +51,23 @@ public interface ClienteService {
 
 	void updateRfc(@Param("id") int id, @Param("rfc") String rfc);
 
+	void updateEstado(@Param("id") int id, @Param("estado") String estado);
+
+	void updateMunicipio(@Param("id") int id, @Param("municipio") String municipio);
+
+	void updateLocalidad(@Param("id") int id, @Param("localidad") String localidad);
+
+	void updateCodigoPostal(@Param("id") int id, @Param("codigopostal") String codigopostal);
+
+	void updateAsentamiento(@Param("id") int id, @Param("asentamiento") String asentamiento);
+
+	void updateCalle(@Param("id") int id, @Param("calle") String calle);
+
+	void updateNumero(@Param("id") int id, @Param("numero") String numero);
+
+	void updateStatus(@Param("id") int id, @Param("status") String status);
+
 	void delete(int id);
-	
+
 	Cliente last();
 }

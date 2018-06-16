@@ -41,7 +41,7 @@ public class UpdateTest {
 		Listacompra c = listacompraService.read(this.listaCompra.getId());
 		try {
 			c.setIdcompra(2);
-			c.setIdproducto(5);
+			c.setIdproducto(4);
 			c.setCantidad(100);
 			c.setSubtotal(105.5);
 			listacompraService.update(c);

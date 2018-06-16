@@ -35,13 +35,23 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public List<Producto> readByCosto(Double costo) {
-		return productoDao.readByCosto(costo);
+	public List<Producto> readByCostoCompra(Double costocompra) {
+		return productoDao.readByCostoCompra(costocompra);
+	}
+
+	@Override
+	public List<Producto> readByCostoVenta(Double costoventa) {
+		return productoDao.readByCostoVenta(costoventa);
 	}
 	
 	@Override
 	public List<Producto> readByExistencia(int existencia) {
 		return productoDao.readByExistencia(existencia);
+	}
+	
+	@Override
+	public List<Producto> readByStatus(int status) {
+		return productoDao.readByStatus(status);
 	}
 	
 	public void update(Producto producto) {
@@ -59,13 +69,23 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public void updateCosto(int id, Double costo) {
-		productoDao.updateCosto(id, costo);
+	public void updateCostoCompra(int id, Double costocompra) {
+		productoDao.updateCostoCompra(id, costocompra);
+	}
+
+	@Override
+	public void updateCostoVenta(int id, Double costoventa) {
+		productoDao.updateCostoVenta(id, costoventa);
 	}
 
 	@Override
 	public void updateExistencia(int id, int existencia) {
 		productoDao.updateExistencia(id, existencia);
+	}
+	
+	@Override
+	public void updateStatus(int id, int status) {
+		productoDao.updateStatus(id, status);
 	}
 	
 	public void delete(int id) {

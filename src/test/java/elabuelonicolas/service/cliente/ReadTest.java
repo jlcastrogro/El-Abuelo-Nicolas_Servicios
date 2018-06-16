@@ -22,67 +22,57 @@ public class ReadTest {
 			Cliente cliente = clienteService.read(1);
 			assertEquals((int) cliente.getId(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readClienteTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByNombre() {
 		try {
-			List<Cliente> clientes = clienteService.readByNombre("José Luis");
-			assertEquals(clientes.get(0).getNombre(), "José Luis");
+			List<Cliente> clientes = clienteService.readByNombre("Aurrera");
+			assertEquals(clientes.get(0).getNombre(), "Aurrera");
 		} catch (Exception e) {
-			System.out.println("Error readByNombreTest: " + e);
-		}
-	}
-
-	@Test
-	public void readByDireccion() {
-		try {
-			Cliente cliente = clienteService.readByDireccion(1);
-			assertEquals((int) cliente.getIddireccion(), 1);
-		} catch (Exception e) {
-			System.out.println("Error readByDireccionTest: " + e);
+			System.out.println("Error readClienteByNombreTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByContacto() {
 		try {
-			List<Cliente> clientes = clienteService.readByContacto("Castro");
-			assertEquals(clientes.get(0).getContacto(), "Castro");
+			List<Cliente> clientes = clienteService.readByContacto("José Luis");
+			assertEquals(clientes.get(0).getContacto(), "José Luis");
 		} catch (Exception e) {
-			System.out.println("Error readByContactoTest: " + e);
+			System.out.println("Error readClienteByContactoTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByTelefono() {
 		try {
-			List<Cliente> clientes = clienteService.readByTelefono("9535362391");
-			assertEquals(clientes.get(0).getTelefono(), "9535362391");
+			Cliente clientes = clienteService.readByTelefono("9535362391");
+			assertEquals(clientes.getTelefono(), "9535362391");
 		} catch (Exception e) {
-			System.out.println("Error readByTelefonoTest: " + e);
+			System.out.println("Error readClienteByTelefonoTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByEmail() {
 		try {
-			List<Cliente> clientes = clienteService.readByEmail("jlcastrogro@gmail.com");
-			assertEquals(clientes.get(0).getEmail(), "jlcastrogro@gmail.com");
+			Cliente clientes = clienteService.readByEmail("contacto@aurrera.com");
+			assertEquals(clientes.getEmail(), "contacto@aurrera.com");
 		} catch (Exception e) {
-			System.out.println("Error readByEmailTest: " + e);
+			System.out.println("Error readClienteByEmailTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByRfc() {
 		try {
-			List<Cliente> clientes = clienteService.readByRfc("KUCNW4NW4RN");
-			assertEquals(clientes.get(0).getRfc(), "KUCNW4NW4RN");
+			Cliente clientes = clienteService.readByRfc("928HEND938HDNOWIN");
+			assertEquals(clientes.getRfc(), "928HEND938HDNOWIN");
 		} catch (Exception e) {
-			System.out.println("Error readByRfcTest: " + e);
+			System.out.println("Error readClienteByRfcTest: " + e);
 		}
 	}
 }

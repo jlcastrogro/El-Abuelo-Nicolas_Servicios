@@ -23,7 +23,7 @@ public class ReadTest {
 			Producto p = productoService.read(1);
 			assertEquals(p.getId(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readProductoTest: " + e);
 		}
 	}
 
@@ -33,7 +33,7 @@ public class ReadTest {
 			List<Producto> producto = productoService.readByTipo("Balón");
 			assertEquals(producto.get(0).getTipo(), "Balón");
 		} catch (Exception e) {
-			System.out.println("Error readByTipoTest: " + e);
+			System.out.println("Error readProductoByTipoTest: " + e);
 		}
 	}
 
@@ -43,27 +43,27 @@ public class ReadTest {
 			List<Producto> producto = productoService.readByMarca("Nike");
 			assertEquals(producto.get(0).getMarca(), "Nike");
 		} catch (Exception e) {
-			System.out.println("Error readByMarcaTest: " + e);
+			System.out.println("Error readProductoByMarcaTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByCosto() {
 		try {
-			List<Producto> producto = productoService.readByCosto(150.0);
-			assertEquals(producto.get(0).getCosto(), 150.0, 1);
+			List<Producto> producto = productoService.readByCostoCompra(200.0);
+			assertEquals(producto.get(0).getCostocompra(), 200.0, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByCostoTest: " + e);
+			System.out.println("Error readProductoByCostoTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByExistencia() {
 		try {
-			List<Producto> producto = productoService.readByExistencia(1);
-			assertEquals(producto.get(0).getExistencia(), 1, 1);
+			List<Producto> producto = productoService.readByExistencia(10);
+			assertEquals(producto.get(0).getExistencia(), 10, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByExistenciaTest: " + e);
+			System.out.println("Error readProductoByExistenciaTest: " + e);
 		}
 	}
 }

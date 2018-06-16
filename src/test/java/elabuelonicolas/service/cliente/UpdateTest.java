@@ -22,12 +22,18 @@ public class UpdateTest {
 	public void setUp() {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("Pedro");
-		this.cliente.setIddireccion(5);
 		this.cliente.setContacto("José");
 		this.cliente.setTelefono("9515787892");
 		this.cliente.setEmail("pedro@gmail.com");
 		this.cliente.setRfc("QBUE72BDU");
-
+		this.cliente.setEstado("Oaxaca");
+		this.cliente.setMunicipio("Putla");
+		this.cliente.setLocalidad("Putla");
+		this.cliente.setCodigopostal(71000);
+		this.cliente.setAsentamiento("Col. Centro");
+		this.cliente.setCalle("Oaxaca");
+		this.cliente.setNumero(123);
+		this.cliente.setStatus(1);
 		clienteService.create(this.cliente);
 
 		this.cliente.setId(clienteService.last().getId());
@@ -43,7 +49,6 @@ public class UpdateTest {
 		Cliente c = clienteService.read(this.cliente.getId());
 		try {
 			c.setNombre("Luis");
-			c.setIddireccion(2);
 			c.setContacto("Guerrero");
 			c.setTelefono("9535362398");
 			c.setEmail("jlcastrogro@outlook.com");
@@ -54,7 +59,6 @@ public class UpdateTest {
 		}
 
 		assertNotEquals(this.cliente.getNombre(), c.getNombre());
-		assertNotEquals(this.cliente.getIddireccion(), c.getIddireccion());
 		assertNotEquals(this.cliente.getContacto(), c.getContacto());
 		assertNotEquals(this.cliente.getTelefono(), c.getTelefono());
 		assertNotEquals(this.cliente.getEmail(), c.getEmail());

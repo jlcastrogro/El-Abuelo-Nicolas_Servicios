@@ -1,7 +1,6 @@
 package elabuelonicolas.service.venta;
  
 import static org.junit.Assert.assertEquals;
-import java.sql.Date;
 import javax.inject.Inject;
 import org.junit.After;
 import org.junit.Before;
@@ -24,8 +23,9 @@ public class CreateTest {
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(2);
-		this.venta.setFecha(Date.valueOf("2018-1-1"));
 		this.venta.setTotal(100.10);
+		this.venta.setTotalreal(100.10);
+		this.venta.setGanancia(100.10);
 	}
 
 	@After
@@ -38,11 +38,11 @@ public class CreateTest {
 		try {
 			ventaService.create(this.venta);
 			Venta v = ventaService.last();
-			assertEquals(v.getFecha(), this.venta.getFecha());
+			assertEquals(v.getTotal(), this.venta.getTotal());
 			
 			this.venta.setId(v.getId());
 		} catch (Exception e) {
-			System.out.println("Error createTest: " + e);
+			System.out.println("Error createVentaTest: " + e);
 		}
 	}
 }

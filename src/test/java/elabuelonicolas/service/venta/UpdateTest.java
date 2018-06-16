@@ -23,8 +23,9 @@ public class UpdateTest {
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(1);
-		this.venta.setFecha(Date.valueOf("2018-5-1"));
 		this.venta.setTotal(100.10);
+		this.venta.setTotalreal(100.10);
+		this.venta.setGanancia(100.10);
 
 		ventaService.create(this.venta);
 
@@ -45,7 +46,7 @@ public class UpdateTest {
 			v.setTotal(1920812.1);
 			ventaService.update(v);
 		} catch (Exception e) {
-			System.out.println("Error updateTest: " + e);
+			System.out.println("Error updateVentaTest: " + e);
 		}
 
 		assertNotEquals(this.venta.getIdcliente(), v.getIdcliente());
@@ -56,11 +57,11 @@ public class UpdateTest {
 	@Test
 	public void updateIdCliente() {
 		try {
-			ventaService.updateIdCliente(this.venta.getId(), 10);
+			ventaService.updateIdCliente(this.venta.getId(), 2);
 			Venta v = ventaService.read(this.venta.getId());
 			assertNotEquals(v.getIdcliente(), this.venta.getIdcliente());
 		} catch (Exception e) {
-			System.out.println("Error updateIdClienteTest: " + e);
+			System.out.println("Error updateVentaIdClienteTest: " + e);
 		}
 	}
 
@@ -71,7 +72,7 @@ public class UpdateTest {
 			Venta c = ventaService.read(this.venta.getId());
 			assertNotEquals(c.getFecha(), this.venta.getFecha());
 		} catch (Exception e) {
-			System.out.println("Error updateFechaTest: " + e);
+			System.out.println("Error updateVentaFechaTest: " + e);
 		}
 	}
 
@@ -82,7 +83,7 @@ public class UpdateTest {
 			Venta v = ventaService.read(this.venta.getId());
 			assertNotEquals(v.getTotal(), this.venta.getTotal());
 		} catch (Exception e) {
-			System.out.println("Error updatePrecioTotalTest: " + e);
+			System.out.println("Error updateVentaPrecioTotalTest: " + e);
 		}
 	}
 }

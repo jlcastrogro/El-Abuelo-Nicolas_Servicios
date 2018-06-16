@@ -31,24 +31,63 @@ public class ProveedorServiceImpl implements ProveedorService {
 		return proveedorDao.readByNombre(nombre);
 	}
 
-	public Proveedor readByDireccion(int iddireccion) {
-		return proveedorDao.readByDireccion(iddireccion);
-	}
-
 	public List<Proveedor> readByContacto(String contacto) {
 		return proveedorDao.readByContacto(contacto);
 	}
 
-	public List<Proveedor> readByTelefono(String telefono) {
+	@Override
+	public Proveedor readByTelefono(String telefono) {
 		return proveedorDao.readByTelefono(telefono);
 	}
 
-	public List<Proveedor> readByEmail(String email) {
+	@Override
+	public Proveedor readByEmail(String email) {
 		return proveedorDao.readByEmail(email);
 	}
 
-	public List<Proveedor> readByRfc(String rfc) {
+	@Override
+	public Proveedor readByRfc(String rfc) {
 		return proveedorDao.readByRfc(rfc);
+	}
+
+	@Override
+	public List<Proveedor> readByEstado(String estado) {
+		return proveedorDao.readByEstado(estado);
+	}
+
+	@Override
+	public List<Proveedor> readByMunicipio(String municipio) {
+		return proveedorDao.readByMunicipio(municipio);
+	}
+
+	@Override
+	public List<Proveedor> readByLocalidad(String localidad) {
+		return proveedorDao.readByLocalidad(localidad);
+	}
+
+	@Override
+	public List<Proveedor> readByCodigoPostal(String codigopostal) {
+		return proveedorDao.readByCodigoPostal(codigopostal);
+	}
+
+	@Override
+	public List<Proveedor> readByAsentamiento(String asentamiento) {
+		return proveedorDao.readByAsentamiento(asentamiento);
+	}
+
+	@Override
+	public List<Proveedor> readByCalle(String calle) {
+		return proveedorDao.readByCalle(calle);
+	}
+
+	@Override
+	public List<Proveedor> readByNumero(String numero) {
+		return proveedorDao.readByNumero(numero);
+	}
+
+	@Override
+	public List<Proveedor> readByStatus(String status) {
+		return proveedorDao.readByStatus(status);
 	}
 
 	public void update(Proveedor proveedor) {
@@ -73,6 +112,46 @@ public class ProveedorServiceImpl implements ProveedorService {
 
 	public void updateRfc(@Param("id") int id, @Param("rfc") String rfc) {
 		proveedorDao.updateRfc(id, rfc);
+	}
+	
+	@Override
+	public void updateEstado(int id, String estado) {
+		proveedorDao.updateEstado(id, estado);
+	}
+
+	@Override
+	public void updateMunicipio(int id, String municipio) {
+		proveedorDao.updateMunicipio(id, municipio);
+	}
+
+	@Override
+	public void updateLocalidad(int id, String localidad) {
+		proveedorDao.updateLocalidad(id, localidad);
+	}
+
+	@Override
+	public void updateCodigoPostal(int id, String codigopostal) {
+		proveedorDao.updateCodigoPostal(id, codigopostal);
+	}
+
+	@Override
+	public void updateAsentamiento(int id, String asentamiento) {
+		proveedorDao.updateAsentamiento(id, asentamiento);
+	}
+
+	@Override
+	public void updateCalle(int id, String calle) {
+		proveedorDao.updateCalle(id, calle);
+	}
+
+	@Override
+	public void updateNumero(int id, String numero) {
+		proveedorDao.updateNumero(id, numero);
+	}
+
+	@Override
+	public void updateStatus(int id, String status) {
+		proveedorDao.updateStatus(id, status);
 	}
 
 	public void delete(int id) {

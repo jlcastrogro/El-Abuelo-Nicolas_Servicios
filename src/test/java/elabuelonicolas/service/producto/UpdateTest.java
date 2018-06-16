@@ -23,8 +23,10 @@ public class UpdateTest {
 		this.producto = new Producto();
 		this.producto.setTipo("Balón");
 		this.producto.setMarca("Puma");
-		this.producto.setCosto(310.1);
+		this.producto.setCostocompra(3.1);
+		this.producto.setCostoventa(3.1);
 		this.producto.setExistencia(12);
+		this.producto.setStatus(1);
 		productoService.create(this.producto);
 		this.producto.setId(productoService.last().getId());
 	}
@@ -41,16 +43,18 @@ public class UpdateTest {
 			p = new Producto();
 			p.setTipo("Camisa");
 			p.setMarca("Pirma");
-			p.setCosto(300.1);
-			p.setExistencia(10);
+			p.setCostocompra(3.2);
+			p.setCostoventa(3.2);
+			p.setExistencia(13);
+			p.setStatus(1);
 			productoService.update(p);
 		} catch (Exception e) {
-			System.out.println("Error updateTest: " + e);
+			System.out.println("Error updateProductoTest: " + e);
 		}
 
 		assertNotEquals(this.producto.getTipo(), p.getTipo());
 		assertNotEquals(this.producto.getMarca(), p.getMarca());
-		assertNotEquals(this.producto.getCosto(), p.getCosto());
+		assertNotEquals(this.producto.getCostocompra(), p.getCostocompra());
 		assertNotEquals(this.producto.getExistencia(), p.getExistencia());
 	}
 
@@ -61,7 +65,7 @@ public class UpdateTest {
 			Producto p = productoService.read(this.producto.getId());
 			assertNotEquals(p.getTipo(), this.producto.getTipo());
 		} catch (Exception e) {
-			System.out.println("Error updateTipoTest: " + e);
+			System.out.println("Error updateProductoTipoTest: " + e);
 		}
 	}
 
@@ -72,18 +76,18 @@ public class UpdateTest {
 			Producto p = productoService.read(this.producto.getId());
 			assertNotEquals(p.getMarca(), this.producto.getMarca());
 		} catch (Exception e) {
-			System.out.println("Error updateMarcaTest: " + e);
+			System.out.println("Error updateProductoMarcaTest: " + e);
 		}
 	}
 
 	@Test
-	public void updateCosto() {
+	public void updateCostoCompra() {
 		try {
-			productoService.updateCosto(this.producto.getId(), 100.0);
+			productoService.updateCostoCompra(this.producto.getId(), 100.0);
 			Producto p = productoService.read(this.producto.getId());
-			assertNotEquals(p.getCosto(), this.producto.getCosto(), 1);
+			assertNotEquals(p.getCostocompra(), this.producto.getCostocompra(), 1);
 		} catch (Exception e) {
-			System.out.println("Error updateCostoTest: " + e);
+			System.out.println("Error updateProductoCostoTest: " + e);
 		}
 	}
 
@@ -94,7 +98,7 @@ public class UpdateTest {
 			Producto p = productoService.read(this.producto.getId());
 			assertNotEquals(p.getExistencia(), this.producto.getExistencia(), 1);
 		} catch (Exception e) {
-			System.out.println("Error updateExistenciaTest: " + e);
+			System.out.println("Error updateProductoExistenciaTest: " + e);
 		}
 	}
 }

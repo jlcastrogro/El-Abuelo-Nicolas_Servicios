@@ -25,6 +25,8 @@ public class DeleteTest {
 		this.listaventa.setIdproducto(1);
 		this.listaventa.setCantidad(10);
 		this.listaventa.setSubtotal(100.12);
+		this.listaventa.setSubtotalreal(100.12);
+		this.listaventa.setGanancia(12.1);
 	}
 
 	@After
@@ -44,7 +46,7 @@ public class DeleteTest {
 
 			assertNull(c);
 		} catch (Exception e) {
-			System.out.println("Error deleteCompraTest: " + e);
+			System.out.println("Error deleteListaventaTest: " + e);
 		}
 	}
 }

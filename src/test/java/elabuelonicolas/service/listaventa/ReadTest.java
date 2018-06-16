@@ -21,7 +21,7 @@ public class ReadTest {
 			Listaventa venta = listaventaService.read(1);
 			assertEquals(venta.getId(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readListaventaTest: " + e);
 		}
 	}
 
@@ -31,7 +31,7 @@ public class ReadTest {
 			List<Listaventa> listaventa = listaventaService.readByIdVenta(1);
 			assertEquals(listaventa.get(0).getIdventa(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByIdVentaTest: " + e);
+			System.out.println("Error readListaventaByIdVentaTest: " + e);
 		}
 	}
 	
@@ -41,27 +41,27 @@ public class ReadTest {
 			List<Listaventa> listaventa = listaventaService.readByIdProducto(1);
 			assertEquals(listaventa.get(0).getIdventa(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByProductoTest: " + e);
+			System.out.println("Error readListaventaByProductoTest: " + e);
 		}
 	}
 	
 	@Test
 	public void readByCantidad() {
 		try {
-			List<Listaventa> listaventa = listaventaService.readByCantidad(1);
-			assertEquals(listaventa.get(0).getCantidad(), 1, 1);
+			List<Listaventa> listaventa = listaventaService.readByCantidad(2);
+			assertEquals(listaventa.get(0).getCantidad(), 2, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByCantidadTest: " + e);
+			System.out.println("Error readListaventaByCantidadTest: " + e);
 		}
 	}
 	
 	@Test
 	public void readBySubtotal() {
 		try {
-			List<Listaventa> listaventa = listaventaService.readBySubtotal(1553.5);
-			assertEquals(listaventa.get(0).getSubtotal(), 1553.5, 1);
+			List<Listaventa> listaventa = listaventaService.readBySubtotal(500.0);
+			assertEquals(listaventa.get(0).getSubtotal(), 500.0, 1);
 		} catch (Exception e) {
-			System.out.println("Error readBySubtotalTest: " + e);
+			System.out.println("Error readListaventaBySubtotalTest: " + e);
 		}
 	}
 }

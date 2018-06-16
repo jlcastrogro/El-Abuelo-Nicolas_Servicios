@@ -25,10 +25,17 @@ public class DeleteTest {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("Coopel");
 		this.proveedor.setContacto("Nicolas");
-		this.proveedor.setIddireccion(3);
 		this.proveedor.setEmail("coopelhj@gmail.com");
 		this.proveedor.setRfc("COPH455672HPLCRD55");
 		this.proveedor.setTelefono("9531294557");
+		this.proveedor.setEstado("Oaxaca");
+		this.proveedor.setMunicipio("Putla");
+		this.proveedor.setLocalidad("Putla");
+		this.proveedor.setCodigopostal(71000);
+		this.proveedor.setAsentamiento("Col. Centro");
+		this.proveedor.setCalle("Oaxaca");
+		this.proveedor.setNumero(123);
+		this.proveedor.setStatus(1);
 		proveedorService.create(this.proveedor);
 		this.proveedor.setId(proveedorService.last().getId());
 	}
@@ -48,7 +55,7 @@ public class DeleteTest {
 
 			assertNull(p);
 		} catch (Exception e) {
-			System.out.println("Error deleteTest: " + e);
+			System.out.println("Error deleteProveedorTest: " + e);
 		}
 	}
 }

@@ -24,10 +24,17 @@ public class CreateTest {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("José");
 		this.cliente.setContacto("Josué");
-		this.cliente.setIddireccion(5);
 		this.cliente.setEmail("jlcastro@gmail.com");
 		this.cliente.setRfc("CACG950419HCSRS00");
 		this.cliente.setTelefono("9515007893");
+		this.cliente.setEstado("Oaxaca");
+		this.cliente.setMunicipio("Putla");
+		this.cliente.setLocalidad("Putla");
+		this.cliente.setCodigopostal(71000);
+		this.cliente.setAsentamiento("Col. Centro");
+		this.cliente.setCalle("Oaxaca");
+		this.cliente.setNumero(123);
+		this.cliente.setStatus(1);
 	}
 
 	@After
@@ -45,7 +52,7 @@ public class CreateTest {
 			
 			this.cliente.setId(c.getId());
 		} catch (Exception e) {
-			System.out.println("Error createTest: " + e);
+			System.out.println("Error createClienteTest: " + e);
 		}
 	}
 }

@@ -46,6 +46,16 @@ public class ListaventaServiceImpl implements ListaventaService{
 		return listaventaDao.readBySubtotal(subtotal);
 	}
 	
+	@Override
+	public List<Listaventa> readBySubtotalReal(double subtotalreal) {
+		return listaventaDao.readBySubtotalReal(subtotalreal);
+	}
+
+	@Override
+	public List<Listaventa> readByGanancia(double ganancia) {
+		return listaventaDao.readByGanancia(ganancia);
+	}
+	
 	public void update(Listaventa listaventas) {
 		listaventaDao.update(listaventas);
 	}
@@ -68,6 +78,16 @@ public class ListaventaServiceImpl implements ListaventaService{
 	@Override
 	public void updateSubtotal(int id, double subtotal) {
 		listaventaDao.updateSubtotal(id, subtotal);
+	}
+	
+	@Override
+	public void updateSubtotalReal(int id, double subtotalreal) {
+		listaventaDao.updateSubtotalReal(id, subtotalreal);
+	}
+
+	@Override
+	public void updateGanancia(int id, double ganancia) {
+		listaventaDao.updateGanancia(id, ganancia);
 	}
 	
 	public void delete(int id) {

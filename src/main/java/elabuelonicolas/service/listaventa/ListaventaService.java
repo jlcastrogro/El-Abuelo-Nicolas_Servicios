@@ -43,4 +43,6 @@ public interface ListaventaService {
 	void delete(int id);
 
 	Listaventa last();
+	
+	List<Listaventa> best();
 }

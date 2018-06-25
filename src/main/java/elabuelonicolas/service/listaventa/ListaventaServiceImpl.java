@@ -98,4 +98,8 @@ public class ListaventaServiceImpl implements ListaventaService{
 	public Listaventa last() {
 		return listaventaDao.last();
 	}
+	
+	public List<Listaventa> best(){
+		return listaventaDao.best();
+	}
 }
